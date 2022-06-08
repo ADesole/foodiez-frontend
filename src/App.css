@@ -3,21 +3,45 @@
 }
 
 .logo {
- height: 100px;
+ height: 60px;
 }
 
+.pageHeader{
+  display:flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.userButtons{
+  margin-left: 7px;
+  margin-right: 7px;
+  background-color: rgb(154, 154, 154);
+  border-radius: 10px;
+height:40px;
+font-weight: bold;
 
+
+}
+
+.signoutButton{
+background-color: white;
+color: #965eb7;
+}
+.profile{
+  display:flex;
+}
 .main-nav {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
-  height: 100px;
-  background-color: #926BA8;
+  height: 60px;
+  background-color: #965eb7;
+  /* background-color: #926BA8; */
 }
 
 .all-or-mine {
-margin-left: 10%;
+margin-left:50px;
   font-weight: bold;
   color: #e6e6e6;
   font-size: 18px;
