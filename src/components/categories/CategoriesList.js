@@ -8,9 +8,14 @@ const CategoriesList = () => {
     <CategoryItem category={category} key={category._id} />
   ));
   return (
-    <>
+    <div className="categories-list">
+      <div className="categories-header">
+        <h2>categories</h2>
+        <button className="plus-button">+</button>
+      </div>
+      <button className="category-item">all</button>
       <div>{displayCategories}</div>
-    </>
+    </div>
   );
 };
 
