@@ -8,6 +8,8 @@ class CategoriesStore {
     makeAutoObservable(this);
   }
 
+  categories = null;
+
   fetchCategories = async () => {
     try {
       await axios.get("http://localhost:8000/categories");
