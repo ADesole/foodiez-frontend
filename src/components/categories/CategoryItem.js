@@ -1,12 +1,7 @@
 const CategoryItem = ({ category }) => {
   return (
     <>
-      <button
-        //onClick={() => displayCategoryContent(category._id)}
-        className="categoryItem"
-      >
-        {category.name}
-      </button>
+      <button className="category-item">{category.name}</button>
     </>
   );
 };
