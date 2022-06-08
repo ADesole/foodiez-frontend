@@ -1,20 +1,38 @@
-import { observable, makeAutoObservable } from "mobx";
+import { makeAutoObservable, runInAction } from "mobx";
 import axios from "axios";
-
-//const MAIN_URL = "http://localhost:8000";
 
 class CategoriesStore {
   constructor() {
     makeAutoObservable(this);
+    this.fetchCategories();
   }
 
-  categories = null;
+  categories = [];
 
   fetchCategories = async () => {
     try {
-      await axios.get("http://localhost:8000/categories");
+      const response = await axios.get(
+        "http://localhost:8000/categories/allCategories"
+      );
+      runInAction(() => {
+        this.categories = response.data;
+      });
     } catch (error) {
-      console.log(error);
+      console.error(error);
+    }
+  };
+
+  addCategory = async (newCategory) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/categories/addCategory",
+        newCategory
+      );
+      runInAction(() => {
+        this.categories = [...this.categories, response.data];
+      });
+    } catch (error) {
+      console.error(error);
     }
   };
 }

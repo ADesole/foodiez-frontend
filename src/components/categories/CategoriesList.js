@@ -1,13 +1,10 @@
-import { useState } from "react";
-import CategoriesStore from "../stores/CategoriesStore";
+//import { useState } from "react";
 import CategoryItem from "./CategoryItem";
+import { observer } from "mobx-react";
+import categoriesStore from "../../stores/CategoriesStore";
 
 const CategoriesList = () => {
-  const [allCategories, setAllCategories] = useState(
-    CategoriesStore.categories
-  );
-
-  const displayCategories = allCategories.map((category) => (
+  const displayCategories = categoriesStore.categories.map((category) => (
     <CategoryItem category={category} key={category._id} />
   ));
   return (
@@ -17,4 +14,4 @@ const CategoriesList = () => {
   );
 };
 
-export default CategoriesList;
+export default observer(CategoriesList);
