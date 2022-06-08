@@ -1,3 +1,4 @@
+
 const NavBar = () => {
   return (
     <div className="main-nav">
