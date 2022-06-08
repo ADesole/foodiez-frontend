@@ -8,12 +8,9 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
     "bootstrap": "^5.1.3",
-<<<<<<< HEAD
-=======
     "jwt-decode": "^3.1.2",
     "mobx": "^6.6.0",
     "mobx-react": "^7.5.0",
->>>>>>> e41d6abb4da0b729a7dc7e27bf1128d9bce9aed9
     "react": "^18.1.0",
     "react-bootstrap": "^2.4.0",
     "react-dom": "^18.1.0",

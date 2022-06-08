@@ -14,6 +14,7 @@ function App() {
     <>
       <div>
         {authStore.user ? (
+          
           <div>
             <div className="pageHeader">
               <img className="logo" src="./pics/logo.png" />
