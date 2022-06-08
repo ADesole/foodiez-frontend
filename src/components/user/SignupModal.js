@@ -20,7 +20,9 @@ function SignupModal() {
 
   return (
     <>
-      <Button onClick={handleShow}>Signup</Button>
+      <button className="userButtons" onClick={handleShow}>
+        Signup
+      </button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Body>
           <form onSubmit={handleSubmit}>
