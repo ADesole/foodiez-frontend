@@ -2,37 +2,87 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo {
+ height: 100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.main-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  background-color: #926BA8;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.all-or-mine {
+margin-left: 10%;
+  font-weight: bold;
+  color: #e6e6e6;
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 1;
+}
+
+.all-or-mine:hover{
+  border-bottom: 2px solid #e6e6e6;
+}
+.all-or-mine:active{
+  border-bottom: 2px solid #e6e6e6;
+}
+
+.categories-list{
+  width: 252px;
+  background-color: #e6e6e6;
+
   display: flex;
   flex-direction: column;
+
+}
+
+.categories-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around ;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.plus-button{
+  width: 33px;
+  height: 33px;
+  border-radius: 50px;
+}
+
+.category-item{
+  font-weight: bold;
+  font-size: 20px;
+  width: 252px;
+  display: flex;
+  flex-direction: column;
+  min-width: 100px;
+  align-items: center;
+    background-color: #e6e6e6;
+    color: black;
+
+}
+.category-item:hover{
   color: white;
+  background-color: #926BA8;
+
+}
+.category-item:active{
+  color: white;
+  background-color: #926BA8;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* need to modify or delete this */
+button {
+  background-color: #926BA8 ;
+  border: none;
+  padding: 10px;
+  color: white;
+  font-size: 16px;
 }
