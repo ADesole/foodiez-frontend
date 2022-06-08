@@ -20,7 +20,9 @@ function SigninModal() {
 
   return (
     <>
-      <Button onClick={handleShow}>Signin</Button>
+      <button className="userButtons" onClick={handleShow}>
+        Signin
+      </button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Body>
           <form onSubmit={handleSubmit}>
