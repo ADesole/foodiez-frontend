@@ -26,6 +26,7 @@ class AuthStore {
       console.log("signed in");
     } catch (error) {
       console.log("AuthStore -> signin -> error", error);
+      alert("Incorrect username or password");
     }
   };
   signout = () => {
