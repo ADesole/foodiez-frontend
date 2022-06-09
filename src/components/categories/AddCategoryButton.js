@@ -9,7 +9,11 @@ const AddCategoryButton = () => {
   return (
     <>
       <button className="plus-button" onClick={openModal}>
-        +
+        <img
+          className="plus-button-icon"
+          src="./pics/plus_icon.png"
+          alt="add category"
+        />
       </button>
       <AddCategoryModal isOpen={isOpen} closeModal={closeModal} />
     </>

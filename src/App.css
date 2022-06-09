@@ -1,3 +1,9 @@
+
+:root {
+  --background-color: #965eb7;
+  --box-shadow: 4px 4px 4px rgba(77, 77, 77, 0.25);
+}
+
 .App {
   text-align: center;
 }
@@ -73,11 +79,13 @@ background-color: #965eb7;
 }
 
 .categories-list{
+  padding-top: 7px;
   width: 252px;
   background-color: #e6e6e6;
-height: 510px;
+  min-height: 1000px;
   display: flex;
   flex-direction: column;
+  gap: 4px;
 
 }
 
@@ -92,8 +100,14 @@ height: 510px;
   width: 33px;
   height: 33px;
   border-radius: 50px;
+  display: flex;
+  align-items: center;
 }
 
+.plus-button-icon{
+  max-width: 20px;
+  max-height: 20px;
+}
 .category-item{
   font-weight: bold;
   font-size: 20px;
@@ -154,7 +168,7 @@ height: 510px;
 button {
   background-color: #926BA8 ;
   border: none;
-  padding: 10px;
+  /* padding: 10px; */
   color: white;
   font-size: 16px;
 }
