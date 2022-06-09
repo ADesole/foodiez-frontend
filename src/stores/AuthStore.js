@@ -14,8 +14,11 @@ class AuthStore {
       console.log("userrr " + Object.entries(this.user));
       instance.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
       console.log("Dataaa" + response.data.token);
+      return true;
     } catch (error) {
+      alert("choose another username please");
       console.error("ERORRRRRRR" + error);
+      return false;
     }
   };
   signin = async (userData) => {
