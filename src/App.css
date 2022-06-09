@@ -47,8 +47,11 @@ justify-content: flex-start;
 .profile{
   display:flex;
   flex-direction:row;
-  margin-top:10px ;
+  align-items: center;
+  gap: 6px;
+  /* margin-top:10px ; */
   margin-right:30px;
+  margin-bottom: 0px;
     /* margin-right: 5px; */
 }
 .main-nav {

@@ -30,6 +30,7 @@ class CategoriesStore {
       );
       runInAction(() => {
         this.categories = [...this.categories, response.data];
+        alert(`${newCategory.name} was added!`);
       });
     } catch (error) {
       console.error(error);
