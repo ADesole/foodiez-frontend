@@ -6,8 +6,9 @@ const SignInNavBar = () => {
       <NavLink to="/all-recipes">
         <button className="all-or-mine">all</button>
       </NavLink>
-
+<NavLink to="/my-recipes">
       <button className="all-or-mine">my recipes</button>
+      </NavLink>
     </div>
   );
 };
