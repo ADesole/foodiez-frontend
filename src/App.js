@@ -17,7 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<RecipeList />} />
         <Route path="/all-recipes" element={<RecipeList />} />
-        <Route path="//my-recipes" element={<MyRecipes />} />
+        <Route path="/my-recipes" element={<MyRecipes />} />
         {/* <Route
           path={"/category/:categorySlug"}
           element={<MemberDetails />}
