@@ -4,15 +4,16 @@ import Home from "./components/Home";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/navBar/NavBar";
 import Nav from "./components/navBar/Nav";
-import RecipeList from "./components/RecipeList";
+import RecipeList from "./components/recipes/RecipeList";
+import MyRecipes from "./components/recipes/MyRecipes";
 function App() {
   return (
     <div>
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/all-recipes" element={<RecipeList/>} />
-        {/* <Route path="/books-page" element={} /> */}
+        <Route path="/all-recipes" element={<RecipeList />} />
+        <Route path="//my-recipes" element={<MyRecipes />} />
         {/* <Route
           path={"/member-detail/:memberSlug"}
           element={<MemberDetails />}
