@@ -2,6 +2,8 @@ import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import CategoriesList from "./components/categories/CategoriesList";
 import RecipeList from "./components/recipes/RecipeList";
+import RecipeDetailed from "./components/recipes/DetailedRecipe";
+import IngredientList from "./components/ingredients/IngredientList";
 import NavBar from "./components/navBar/NavBar";
 import SignInNavBar from "./components/navBar/SignInNavBar";
 import SigninModal from "./components/user/SigninModal";
@@ -52,6 +54,9 @@ function App() {
       {/* <NavBar /> */}
       <CategoriesList />
       <RecipeList />
+      <IngredientList />
+
+
 
     </>
   );

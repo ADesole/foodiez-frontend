@@ -6,14 +6,14 @@ function DetailedRecipe({ recipe }) {
     return (
       <>
 <section className="section">
-  <img src={recipe.image} style={{ width: 500,
+  <img src={Recipes[0].image} style={{ width: 500,
   height: 500}} />
   <div className="content">
     <h2 className="title">
-    {recipe.name}
+    {Recipes[0].name}
     </h2>
     <p className="paragraph">
-    {recipe.ingredients.join(" - ")}
+    {Recipes[0].ingredients.join(" - ")}
     </p>
   </div>
 </section>

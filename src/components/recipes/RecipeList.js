@@ -15,7 +15,7 @@ let recipeList
   else {
   recipeList = RecipesStore.Recipes.map((recipe) => <RecipeItem recipe={recipe}/>);
 }
-  // console.log(recipeList);
+  console.log(recipeList);
 
 
   return (
