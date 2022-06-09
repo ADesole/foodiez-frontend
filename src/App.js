@@ -22,9 +22,7 @@ function App() {
                 <h3
                   style={{
                     color: "black",
-                    //position: "relative",
-                    // top: "20px",
-                    // left: "10px",
+
                     fontSize: "20px",
                   }}
                 >
