@@ -2,6 +2,8 @@ import AddCategoryButton from "./AddCategoryButton";
 import CategoryItem from "./CategoryItem";
 import { observer } from "mobx-react";
 import categoriesStore from "../../stores/CategoriesStore";
+import recipeStore from "../../stores/recipeStore";
+import authstore from "../../stores/AuthStore";
 
 const CategoriesList = () => {
   const displayCategories = categoriesStore.categories.map((category) => (
@@ -12,9 +14,11 @@ const CategoriesList = () => {
     <div className="categories-list">
       <div className="categories-header">
         <h2>categories</h2>
-        <AddCategoryButton />
+        {authstore.user ? <AddCategoryButton /> : <></>}
       </div>
-      <button className="category-item">all</button>
+      <button onClick={recipeStore.allRecipes} className="category-item">
+        all
+      </button>
       <div>{displayCategories}</div>
     </div>
   );
