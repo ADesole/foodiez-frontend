@@ -30,7 +30,7 @@ const AddCategoryModal = (props) => {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="primary" onClick={handleSubmit}>
+        <Button variant="outline-dark" onClick={handleSubmit}>
           Add category
         </Button>
       </Modal.Footer>
