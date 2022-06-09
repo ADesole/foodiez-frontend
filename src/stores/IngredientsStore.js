@@ -1,36 +1,36 @@
 import { makeAutoObservable, runInAction } from "mobx";
 import axios from "axios";
 
-class CategoriesStore {
+class IngredientsStore {
   constructor() {
     makeAutoObservable(this);
-    this.fetchCategories();
+    this.fetchIngredients();
   }
 
-  categories = [];
+  ingredients = [];
 
-  fetchCategories = async () => {
+  fetchIngredients = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/categories/allCategories"
+        "http://localhost:8000/ingredients/ingredients"
       );
       runInAction(() => {
-        this.categories = response.data;
+        this.ingredients = response.data;
       });
     } catch (error) {
       console.error(error);
     }
   };
 
-  addCategory = async (newCategory) => {
+  addIngredients = async (newIngredient) => {
     try {
       const response = await axios.post(
         "http://localhost:8000/categories/newCategory",
-        newCategory
+        newIngredient
       );
       runInAction(() => {
-        this.categories = [...this.categories, response.data];
-        alert(`${newCategory.name} was added!`);
+        this.ingredients = [...this.ingredients, response.data];
+        alert(`${newIngredient.name} was added!`);
       });
     } catch (error) {
       console.error(error);
@@ -38,5 +38,5 @@ class CategoriesStore {
   };
 }
 
-const categoriesStore = new CategoriesStore();
-export default categoriesStore;
+const ingredientsStore = new IngredientsStore();
+export default ingredientsStore;

@@ -1,41 +1,41 @@
 import { Modal, Button, InputGroup, Form } from "react-bootstrap";
 import { useState } from "react";
-import categoriesStore from "../../stores/CategoriesStore";
+import ingredientsStore from "../../stores/IngredientsStore";
 
-const AddCategoryModal = (props) => {
-  const [category, setCategory] = useState({ name: "" });
+const AddIngredientModal = (props) => {
+  const [ingredient, setIngredient] = useState({ name: "" });
 
   const handleChange = (event) => {
-    setCategory({ ...category, [event.target.name]: event.target.value });
+    setIngredient({ ...ingredient, [event.target.name]: event.target.value });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    categoriesStore.addCategory(category);
+    ingredientsStore.addIngredients(ingredient);
     props.closeModal();
-    setCategory({ name: "" });
+    setIngredient({ name: "" });
   };
 
   return (
     <Modal centered show={props.isOpen} onHide={props.closeModal}>
       <Modal.Header closeButton>
-        <Modal.Title>Create a new category</Modal.Title>
+        <Modal.Title>Create a new ingredient</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
           <InputGroup>
-            <InputGroup.Text>Category name</InputGroup.Text>
+            <InputGroup.Text>ingredient name</InputGroup.Text>
             <Form.Control type="text" name="name" onChange={handleChange} />
           </InputGroup>
         </Form>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="outline-dark" onClick={handleSubmit}>
-          Add category
+          Add ingredient
         </Button>
       </Modal.Footer>
     </Modal>
   );
 };
 
-export default AddCategoryModal;
+export default AddIngredientModal;

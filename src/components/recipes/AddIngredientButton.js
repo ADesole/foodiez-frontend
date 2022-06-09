@@ -1,7 +1,7 @@
 import { useState } from "react";
-import AddCategoryModal from "./AddCategoryModal";
+import AddIngredientModal from "./AddIngredientModal";
 
-const AddCategoryButton = () => {
+const AddIngredientButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   const closeModal = () => setIsOpen(false);
   const openModal = () => setIsOpen(true);
@@ -12,12 +12,12 @@ const AddCategoryButton = () => {
         <img
           className="plus-button-icon"
           src="./pics/plus_icon.png"
-          alt="add category"
+          alt="add ingredient"
         />
       </button>
-      <AddCategoryModal isOpen={isOpen} closeModal={closeModal} />
+      <AddIngredientModal isOpen={isOpen} closeModal={closeModal} />
     </>
   );
 };
 
-export default AddCategoryButton;
+export default AddIngredientButton;
