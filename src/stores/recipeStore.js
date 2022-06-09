@@ -5,10 +5,10 @@ class RecipeStore {
   constructor() {
   }
   Recipes = [];
-
+  
   fetchRecipes = async () => {
     try {
-      const response = await instance.get("/recipes");
+      const response = await instance.get("/recipes/recipes");
       this.Recipes = response.data;
       console.log(response.data)
     } catch (error) {
