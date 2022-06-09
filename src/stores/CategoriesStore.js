@@ -25,7 +25,7 @@ class CategoriesStore {
   addCategory = async (newCategory) => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/categories/addCategory",
+        "http://localhost:8000/categories/newCategory",
         newCategory
       );
       runInAction(() => {
