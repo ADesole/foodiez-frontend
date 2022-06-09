@@ -7,6 +7,17 @@ import Home from "../Home";
 // get the recipe ids from user and compare them with recipe ids from all the recipes (recipeList)
 function RecipeList() {
   let recipeList;
+  if (AuthStore.user) {
+    recipeList = RecipesStore.Recipes.filter(
+      (recipe) => AuthStore.user._id === recipe.user
+    ).map((recipe) => <RecipeItem recipe={recipe} />);
+    console.log(RecipesStore.Recipes);
+  } else {
+    recipeList = RecipesStore.Recipes.map((recipe) => (
+      <RecipeItem recipe={recipe} />
+    ));
+  }
+  console.log(recipeList);
 
   recipeList = RecipesStore.Recipes.map((recipe) => (
     <RecipeItem recipe={recipe} />
