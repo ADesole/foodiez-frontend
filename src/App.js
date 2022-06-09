@@ -13,11 +13,11 @@ function App() {
     <div>
       <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<RecipeList />} />
         <Route path="/all-recipes" element={<RecipeList />} />
         <Route path="//my-recipes" element={<MyRecipes />} />
         {/* <Route
-          path={"/member-detail/:memberSlug"}
+          path={"/category/:categorySlug"}
           element={<MemberDetails />}
         /> */}
         {/* <Route path={"/book-detail/:bookSlug"} element={<BookDetails />} /> */}
