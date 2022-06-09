@@ -19,6 +19,12 @@ function RecipeList() {
   }
   console.log(recipeList);
 
+  recipeList = RecipesStore.Recipes.map((recipe) => (
+    <RecipeItem recipe={recipe} />
+  ));
+
+  // console.log(recipeList);
+
   return <div className="row justify-content-center">{recipeList}</div>;
 }
 export default observer(RecipeList);
