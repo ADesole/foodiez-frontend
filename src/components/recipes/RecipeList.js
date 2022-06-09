@@ -17,6 +17,12 @@ function RecipeList() {
       <RecipeItem recipe={recipe} />
     ));
   }
+<<<<<<< HEAD
+  else {
+  recipeList = RecipesStore.Recipes.map((recipe) => <RecipeItem recipe={recipe}/>);
+}
+  console.log(recipeList);
+=======
   console.log(recipeList);
 
   recipeList = RecipesStore.Recipes.map((recipe) => (
@@ -24,6 +30,7 @@ function RecipeList() {
   ));
 
   // console.log(recipeList);
+>>>>>>> 8ec5e9a17390c2dc23bcd0dfc4f2a44d13a9e1d3
 
   // return <div className="row justify-content-center">{recipeList}</div>;
   return (

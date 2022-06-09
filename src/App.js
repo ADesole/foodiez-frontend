@@ -4,6 +4,8 @@ import Home from "./components/Home";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import CategoriesList from "./components/categories/CategoriesList";
 import RecipeList from "./components/recipes/RecipeList";
+import RecipeDetailed from "./components/recipes/DetailedRecipe";
+import IngredientList from "./components/ingredients/IngredientList";
 //import AddIngredientButton from "./components/recipes/AddIngredientButton";
 import NavBar from "./components/navBar/NavBar";
 import Nav from "./components/navBar/Nav";
