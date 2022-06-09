@@ -2,6 +2,7 @@ import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import CategoriesList from "./components/categories/CategoriesList";
 import RecipeList from "./components/recipes/RecipeList";
+//import AddIngredientButton from "./components/recipes/AddIngredientButton";
 import NavBar from "./components/navBar/NavBar";
 import SignInNavBar from "./components/navBar/SignInNavBar";
 import SigninModal from "./components/user/SigninModal";

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AddIngredientModal from "./AddIngredientModal";
 
-const AddCategoryButton = () => {
+const AddIngredientButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   const closeModal = () => setIsOpen(false);
   const openModal = () => setIsOpen(true);
@@ -20,4 +20,4 @@ const AddCategoryButton = () => {
   );
 };
 
-export default AddCategoryButton;
+export default AddIngredientButton;

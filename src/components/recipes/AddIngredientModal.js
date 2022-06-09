@@ -1,6 +1,6 @@
 import { Modal, Button, InputGroup, Form } from "react-bootstrap";
 import { useState } from "react";
-import ingredientsStore from "../../stores/ingredientsStore";
+import ingredientsStore from "../../stores/IngredientsStore";
 
 const AddIngredientModal = (props) => {
   const [ingredient, setIngredient] = useState({ name: "" });
