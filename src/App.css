@@ -126,7 +126,7 @@ justify-content: flex-start;
   color: white;
   background-color: #926BA8;
 }
-.category-item:active{
+.category-item:focus{
   color: white;
   background-color: #926BA8;
 }
