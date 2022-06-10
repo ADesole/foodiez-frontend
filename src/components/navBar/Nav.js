@@ -27,7 +27,9 @@ const Nav = () => {
               >
                 Hello {authStore.user.username}{" "}
               </h3>
-              <SignoutButton />
+              <NavLink to="/">
+                <SignoutButton />
+              </NavLink>
             </div>
           </div>
           <SignInNavBar />
