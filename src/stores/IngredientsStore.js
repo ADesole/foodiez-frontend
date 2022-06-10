@@ -39,4 +39,5 @@ class IngredientsStore {
 }
 
 const ingredientsStore = new IngredientsStore();
+
 export default ingredientsStore;
