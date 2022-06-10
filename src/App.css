@@ -77,7 +77,7 @@ justify-content: flex-start;
 .all-or-mine:hover{
   border-bottom: 2px solid #e6e6e6;
 }
-.all-or-mine:active{
+.all-or-mine:focus{
   border-bottom: 2px solid #e6e6e6;
 }
 
@@ -176,7 +176,7 @@ justify-content: flex-start;
   padding: 30px;
   display: grid;
   grid-template-columns: 250px 250px 250px 250px;
-  grid-template-rows: 250px;
+  grid-template-rows: 250px 250px 250px 250px;
   column-gap: 30px;
   row-gap: 30px;
 }
