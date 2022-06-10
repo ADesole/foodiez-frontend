@@ -28,6 +28,9 @@ function App() {
         {/* <Route path={"/book-detail/:bookSlug"} element={<BookDetails />} /> */}
         {/* <Route path={"/book-detail/:bookSlug"} element={<BookDetails />} /> */}
       </Routes>
+      <IngredientList />
+
+
     </div>
   );
 }
