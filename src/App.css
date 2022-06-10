@@ -131,43 +131,92 @@ justify-content: flex-start;
   background-color: #926BA8;
 }
 
-.section {
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.recipe-details-card {
   display: flex;
   flex-direction: row;
-  font-family: sans-serif;
-  margin-left: 5%;
-  margin-right: 5%;
-  text-align: center;
+  gap: 15px;
+  align-items: center;
+
+  padding: 15px;
+  margin: auto;
+  margin-top: 30px;
+  max-width: 70%;
+  border-radius: 12px;
+
+  border: 1px solid #ccc;
+  box-shadow: 4px 4px 4px rgba(77, 77, 77, 0.25);
+  /* text-align: center; */
 }
 
-.title {
-  font-size: 24px;
-  color: #222;
-  line-height: 24px;
+.recipe-details-image{
+  max-width: 30%;
+  border-radius: 12px;
 }
 
-.cardRecipe{
-  border-radius: 50%;
-  width: 250px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  text-align: center;
-  max-height: 20%;
-  margin-top: 10px;
-  margin-right: 10px;
+.recipe-details-content{
+  padding:2%;
+
 }
 
-.image{
-  width: 700;
-  height: 700;
+.recipe-details-title{
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.sub-title{
+  font-weight: bold;
+}
+
+.recipe-list{
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 250px 250px 250px 250px;
+  grid-template-rows: 250px;
+  column-gap: 30px;
+  row-gap: 30px;
+}
+
+.recipe-card{
+  position: relative;
+  max-width: 250px;
+  max-height: 250px;
+  border-radius: 12px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.recipe-image{
+  border-radius: 12px;
+  width:250px;
+  height:250px;
+  object-fit:cover;
+}
+
+.recipe-name-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  min-width: 250px;
+  background-color: black;
+  bottom: 0px;
+  opacity: 0.7;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.recipe-name{
+  font-size: 22px;;
+  color: rgb(255, 255, 255);
+  margin-bottom: 0px;
+  padding-top: 2px;
+    padding-bottom: 25px;
+
 }
 
 /* need to modify or delete this */
 button {
   background-color: #926BA8 ;
   border: none;
-  /* padding: 10px; */
   color: white;
   font-size: 16px;
 }
@@ -184,7 +233,7 @@ label {
   padding: 20px;
 }
 
-input[type=submit] {
+.submit-ingredient{
   font-weight: bold;
   background-color: #04AA6D;
   color: white;
@@ -195,13 +244,15 @@ input[type=submit] {
   max-width: 20%;
   display: flex;
   justify-content: center;
+  border-radius: 10px;
 }
 
-input[type=text] {
+.text-ingredient{
   max-width: 30%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   resize: vertical;
+  border-radius: 10px;
 }
