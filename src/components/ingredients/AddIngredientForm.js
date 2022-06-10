@@ -24,12 +24,18 @@ const AddIngredientForm = () => {
           <input
             onChange={handleChange}
             type="text"
+            className="text-ingredient"
             id="fname"
             name="name"
             placeholder="Your ingredient..."
           />
 
-          <input type="submit" onClick={handleSubmit} value="add ingredient" />
+          <input
+            type="submit"
+            className="submit-ingredient"
+            onClick={handleSubmit}
+            value="add ingredient"
+          />
         </div>
       </form>
     </>

@@ -5,7 +5,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import CategoriesList from "./components/categories/CategoriesList";
 import RecipeList from "./components/recipes/RecipeList";
 import AddIngredientForm from "./components/ingredients/AddIngredientForm";
-import RecipeDetailed from "./components/recipes/DetailedRecipe";
+import DetailedRecipe from "./components/recipes/DetailedRecipe";
 import IngredientList from "./components/ingredients/IngredientList";
 //import AddIngredientButton from "./components/recipes/AddIngredientButton";
 import NavBar from "./components/navBar/NavBar";
@@ -20,6 +20,7 @@ function App() {
         <Route path="/all-recipes" element={<RecipeList />} />
         <Route path="/add-ingredient" element={<AddIngredientForm />} />
         <Route path="/my-recipes" element={<MyRecipes />} />
+        <Route path="/recipe-details" element={<DetailedRecipe />} />
         {/* <Route
           path={"/category/:categorySlug"}
           element={<MemberDetails />}
