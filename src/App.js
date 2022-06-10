@@ -5,6 +5,9 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import CategoriesList from "./components/categories/CategoriesList";
 import RecipeList from "./components/recipes/RecipeList";
 import AddIngredientForm from "./components/recipes/AddIngredientForm";
+import RecipeDetailed from "./components/recipes/DetailedRecipe";
+import IngredientList from "./components/ingredients/IngredientList";
+//import AddIngredientButton from "./components/recipes/AddIngredientButton";
 import NavBar from "./components/navBar/NavBar";
 import Nav from "./components/navBar/Nav";
 import MyRecipes from "./components/recipes/MyRecipes";
@@ -13,12 +16,12 @@ function App() {
     <div>
       <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<RecipeList />} />
         <Route path="/all-recipes" element={<RecipeList />} />
-        <Route path="//my-recipes" element={<MyRecipes />} />
         <Route path="/add-ingredient" element={<AddIngredientForm />} />
+        <Route path="/my-recipes" element={<MyRecipes />} />
         {/* <Route
-          path={"/member-detail/:memberSlug"}
+          path={"/category/:categorySlug"}
           element={<MemberDetails />}
         /> */}
         {/* <Route path={"/book-detail/:bookSlug"} element={<BookDetails />} /> */}
