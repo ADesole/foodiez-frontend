@@ -25,7 +25,7 @@ class IngredientsStore {
   addIngredients = async (newIngredient) => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/categories/newCategory",
+        "http://localhost:8000/ingredients/createIngredient",
         newIngredient
       );
       runInAction(() => {
