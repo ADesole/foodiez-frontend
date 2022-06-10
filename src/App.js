@@ -20,7 +20,7 @@ function App() {
         <Route path="/all-recipes" element={<RecipeList />} />
         <Route path="/add-ingredient" element={<AddIngredientForm />} />
         <Route path="/my-recipes" element={<MyRecipes />} />
-        <Route path="/recipe-details" element={<DetailedRecipe />} />
+        <Route path="/recipe-details/:recipeSlug" element={<DetailedRecipe />} />
         {/* <Route
           path={"/category/:categorySlug"}
           element={<MemberDetails />}
