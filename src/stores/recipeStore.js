@@ -36,8 +36,9 @@ class RecipeStore {
   };
 
   createRecipe = async (Recipe) => {
+    Recipe.name = Recipe.name.charAt(0).toUpperCase() + Recipe.name.slice(1);
     const response = await instance.post("/recipes/recipes", Recipe);
-    console.log(response.data)
+    console.log(response.data);
   };
 }
 const recipeStore = new RecipeStore();

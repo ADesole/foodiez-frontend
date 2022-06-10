@@ -24,6 +24,8 @@ class CategoriesStore {
 
   addCategory = async (newCategory) => {
     try {
+      newCategory.name =
+        newCategory.name.charAt(0).toUpperCase() + newCategory.name.slice(1);
       const response = await axios.post(
         "http://localhost:8000/categories/newCategory",
         newCategory
