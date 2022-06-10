@@ -16,7 +16,7 @@ function RecipeList() {
   return (
     <div style={{ display: "flex" }}>
       <Home />
-      <div className="row justify-content-center">{recipeList}</div>
+      <div className="recipe-list">{recipeList}</div>
     </div>
   );
 }
