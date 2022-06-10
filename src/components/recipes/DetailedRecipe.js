@@ -1,6 +1,6 @@
 import Recipes from "../../recipeData";
 
-function DetailedRecipe({ recipe }) {
+function DetailedRecipe() {
   const allSteps = Recipes[0].steps.split("-");
 
   const organizedSteps = allSteps.map((step) => <p>{`• ${step}`}</p>);
