@@ -1,24 +1,46 @@
-import Recipes from "../../recipeData";
-
+import recipeStore from "../../stores/recipeStore";
+import { useParams } from "react-router-dom";
 function DetailedRecipe() {
-  const allSteps = Recipes[0].steps.split("-");
+  const { recipeSlug } = useParams();
+  const recipe = recipeStore.Recipes.find(
+    (recipe) => recipe.slug === recipeSlug
+  );
+
+  const recipeIngredients = Object.values(recipe.ingredients).map(
+    (ingredient) => ingredient.name
+  );
+  console.log("ingredients console " + recipeIngredients);
+  // console.log("ingredients console " + Object.values(recipeIngredients));
+  const allSteps = recipe.steps.split(".");
 
   const organizedSteps = allSteps.map((step) => <p>{`• ${step}`}</p>);
 
   return (
     <>
       <section className="recipe-details-card">
-        <img className="recipe-details-image" src={Recipes[0].image} />
+        <img className="recipe-details-image" src={recipe.image} />
+
+        <p className="recipe-details-title">{recipe.name}</p>
         <div className="recipe-details-content">
-          <p className="recipe-details-title">{Recipes[0].name}</p>
           <>
-            <p className="sub-title">ingredients:</p>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <p className="sub-title">⏰ Total time: </p>
+              <p
+                className="recipe-details-ingredirents"
+                style={{ position: "relative", left: "10px" }}
+              >
+                {" "}
+                5 minutes
+              </p>
+            </div>
+
+            <p className="sub-title">🥗 Ingredients:</p>
             <p className="recipe-details-ingredirents">
-              {Recipes[0].ingredients.join(" - ")}
+              {recipeIngredients.join(" - ")}
             </p>
           </>
           <>
-            <p className="sub-title">steps:</p>
+            <p className="sub-title">📝 Steps:</p>
             {organizedSteps}
           </>
         </div>

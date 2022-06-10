@@ -16,7 +16,7 @@ class AuthStore {
       console.log("Dataaa" + response.data.token);
       return true;
     } catch (error) {
-      alert("choose another username please");
+      alert("This username is already taken. Please choose another name");
       console.error("ERORRRRRRR" + error);
       return false;
     }
