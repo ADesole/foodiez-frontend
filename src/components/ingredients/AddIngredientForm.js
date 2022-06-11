@@ -27,6 +27,8 @@ const AddIngredientForm = () => {
             className="text-ingredient"
             id="fname"
             name="name"
+            // value={ingredient.name}
+            value={ingredient.name}
             placeholder="Your ingredient..."
           />
 
