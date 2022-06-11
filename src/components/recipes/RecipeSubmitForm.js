@@ -28,35 +28,60 @@ const RecipeSubmitForm = ({ checkedItems, disabled }) => {
     // uncommment below to send to database
     recipeStore.createRecipe(input);
     alert("Yum 😋! what a delicious meal , recipe was created successfully.");
-
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-       Recipe Name:
-        <input type="text" name="name" onChange={handleChange} />
+    <form onSubmit={handleSubmit} className="create-recipe-form">
+      <label className="create-recipe-label">
+        <p className="form-sub-title">Recipe Name:</p>
+        <input
+          placeholder="Your title..."
+          className="text-ingredient"
+          type="text"
+          name="name"
+          onChange={handleChange}
+        />
       </label>
-      <label>
-        Image Url:
-        <input type="text" name="image" onChange={handleChange} />
+      <label className="create-recipe-label">
+        <p className="form-sub-title">Image URL:</p>
+        <input
+          placeholder="Your image URL..."
+          className="text-ingredient"
+          type="text"
+          name="image"
+          onChange={handleChange}
+        />
       </label>
-      <label>
-        Time to Prepare:
-        <input type="number" name="ttp" onChange={handleChange} />
+      <label className="create-recipe-label">
+        <p className="form-sub-title">Time to Prepare:</p>
+        <input
+          placeholder="In minutes..."
+          className="text-ingredient"
+          type="number"
+          name="ttp"
+          onChange={handleChange}
+        />
       </label>
-      <label>
-        Steps:
-        <textarea name="steps" onChange={handleChange} />
+      <label className="create-recipe-label">
+        <p className="form-sub-title">Steps:</p>
+        <textarea
+          placeholder="Step1 - Step2 - ..."
+          name="steps"
+          className="text-ingredient"
+          onChange={handleChange}
+        />
       </label>
-      <br />
-      <label>
-        Category:
+      <label className="create-recipe-label">
+        <p className="form-sub-title">Category:</p>
         <CategoriesList handleChange={handleChange} />
       </label>
-        
-        <input type="submit" onClick={handleIngredients} disabled={disabled} />
-      
+
+      <input
+        className="submit-form"
+        type="submit"
+        onClick={handleIngredients}
+        disabled={disabled}
+      />
     </form>
   );
 };
