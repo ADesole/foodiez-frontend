@@ -43,6 +43,7 @@ class AuthStore {
       this.user = jwt_decode(res.data.token);
       instance.defaults.headers.common.Authorization = `Bearer ${res.data.token}`;
       console.log("signed in");
+      this.setUser(res.data.token);
     } catch (error) {
       console.log("AuthStore -> signin -> error", error);
       alert("Incorrect username or password");
@@ -50,12 +51,29 @@ class AuthStore {
   };
   signout = () => {
     delete instance.defaults.headers.common.Authorization;
-    // localStorage.removeItem("myToken");
+    localStorage.removeItem("token");
     this.user = null;
+  };
+  setUser = (userToken) => {
+    localStorage.setItem("token", userToken);
+    console.log(localStorage)
+    instance.defaults.headers.common.Authorization = `Bearer ${userToken}`;
+    this.user = jwt_decode(userToken);
+  };
+  
+  checkForToken = () => {
+    const userToken = localStorage.getItem("token");
+    if (userToken) {
+      const newUser = jwt_decode(userToken);
+      if (newUser.exp > Date.now()) this.setUser(userToken);
+      else this.signout();
+    }
   };
 }
 
+
+
 const authstore = new AuthStore();
-// authstore.checkForToken();
+authstore.checkForToken();
 
 export default authstore;
