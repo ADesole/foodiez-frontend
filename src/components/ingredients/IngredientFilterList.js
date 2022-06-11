@@ -2,6 +2,8 @@ import { Card, Form} from "react-bootstrap";
 import ingredientsStore from "../../stores/IngredientsStore";
 import IngredientItem from "./IngredientItem";
 import recipeStore from './../../stores/recipeStore';
+import { observer } from "mobx-react";
+
 
 let checkedItems = [];
 
@@ -38,17 +40,20 @@ function IngredientFilterList() {
   return (
     <>
       {/* Make the ingredient-list-filter scrollable */}
-      <div className="ingredient-list-filter">{ingredientList}  
-
-      <button onClick={handleSubmitFilterWith}>
+      <div className="Ingredient-filter-container">
+        <div className="ingredient-list-filter">{ingredientList}  
+        </div>
+      <div className="Button-container">
+      <button className ="Ingredient-filter-button" onClick={handleSubmitFilterWith}>
        Filter With
     </button>
-    <button onClick={handleSubmitFilterWithout} >
+    <button className ="Ingredient-filter-button" onClick={handleSubmitFilterWithout} >
     Filter Without
-    </button></div>
-     
+    </button>
+    </div>
+    </div>
     </>
   );
 }
 
-export default IngredientFilterList;
+export default observer(IngredientFilterList);
