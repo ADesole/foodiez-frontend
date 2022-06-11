@@ -26,6 +26,7 @@ function IngredientList() {
       setDisabled(true)
   };
   //
+
   let ingredientList = ingredientsStore.ingredients.map((ingredient) => (
     <IngredientItem
       ingredient={ingredient}
@@ -35,9 +36,12 @@ function IngredientList() {
   ));
   return (
     <>
-      <div className="ingredient-list">{ingredientList}</div>
-      <AddIngredientForm />
-      <RecipeSubmitForm checkedItems={checkedItems} disabled={disabled} />
+      <div style={{ margin: "30px" }}>
+        <h3>Choose your ingredients</h3>
+        <div className="ingredient-list">{ingredientList}</div>
+        <AddIngredientForm />
+        <RecipeSubmitForm checkedItems={checkedItems} disabled={disabled} />
+      </div>
     </>
   );
 }

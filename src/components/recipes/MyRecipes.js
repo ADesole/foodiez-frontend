@@ -8,7 +8,7 @@ import Home from "../Home";
 function RecipeList() {
   let recipeList;
   if (AuthStore.user) {
-    recipeList = RecipesStore.Recipes.filter(
+    recipeList = RecipesStore.filteredReceipes.filter(
       (recipe) => AuthStore.user._id === recipe.user
     ).map((recipe) => <RecipeItem recipe={recipe} />);
   }
