@@ -8,7 +8,7 @@ function Home() {
   return (
     <>
   <CategoriesList />
-  <IngredientFilterList />
+  {/* <IngredientFilterList /> */}
   </>
   )
 }
