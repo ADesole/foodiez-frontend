@@ -3,6 +3,9 @@
   --background-color: #965eb7;
   --box-shadow: 4px 4px 4px rgba(77, 77, 77, 0.25);
 }
+.modaltitle{
+color:#965eb7;
+}
 
 .scrollBorrow{
   border-radius: 5px;

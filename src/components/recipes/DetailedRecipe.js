@@ -30,7 +30,7 @@ function DetailedRecipe() {
                 style={{ position: "relative", left: "10px" }}
               >
                 {" "}
-                5 minutes
+                {recipe.ttp}
               </p>
             </div>
 

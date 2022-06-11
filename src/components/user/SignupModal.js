@@ -44,7 +44,7 @@ function SignupModal() {
                 placeholder="Password"
               />
             </InputGroup>
-            <Button variant="outline-dark" type="submit">
+            <Button variant="outline-success" type="submit">
               Signup
             </Button>
           </form>
