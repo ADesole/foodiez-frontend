@@ -19,7 +19,7 @@ const AddCategoryModal = (props) => {
   return (
     <Modal centered show={props.isOpen} onHide={props.closeModal}>
       <Modal.Header closeButton>
-        <Modal.Title>Create a new category</Modal.Title>
+        <Modal.Title className="modaltitle">Create a new category</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
@@ -30,7 +30,7 @@ const AddCategoryModal = (props) => {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="outline-dark" onClick={handleSubmit}>
+        <Button variant="outline-success" onClick={handleSubmit}>
           Add category
         </Button>
       </Modal.Footer>
