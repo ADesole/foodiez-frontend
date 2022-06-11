@@ -9,12 +9,12 @@ class AuthStore {
   user = null;
 
   // checkForToken = () => {
-  //   const token = localStorage.getItem('myToken');
+  //   const token = localStorage.getItem("myToken");
   //   if (token) {
   //     const currentTime = Date.now();
   //     const user = jwt_decode(token);
   //     if (user.exp >= currentTime) {
-  //       this.setUser(token);
+  //       this.user = token;
   //     } else {
   //       this.signout();
   //     }
@@ -50,7 +50,7 @@ class AuthStore {
   };
   signout = () => {
     delete instance.defaults.headers.common.Authorization;
-    // localStorage.removeItem('myToken');
+    // localStorage.removeItem("myToken");
     this.user = null;
   };
 }

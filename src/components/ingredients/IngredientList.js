@@ -11,19 +11,16 @@ let checkedItems = [];
 function IngredientList() {
   const [disabled, setDisabled] = useState(true);
 
-
   const checkListAdd = (checkItem) => {
     checkedItems.push(checkItem._id);
-    if(checkedItems.length >= 1)
-      setDisabled(false)
+    if (checkedItems.length >= 1) setDisabled(false);
   };
   const checkListRemove = (checkItem) => {
     let foundIndex = checkedItems.findIndex(
       (object) => object._id === checkItem
     );
     checkedItems.splice(foundIndex, 1);
-    if(checkedItems.length < 1)
-      setDisabled(true)
+    if (checkedItems.length < 1) setDisabled(true);
   };
   //
 
@@ -37,7 +34,7 @@ function IngredientList() {
   return (
     <>
       <div style={{ margin: "30px" }}>
-        <h3>Choose your ingredients</h3>
+        <label className="form-sub-title">Choose your ingredients</label>
         <div className="ingredient-list">{ingredientList}</div>
         <AddIngredientForm />
         <RecipeSubmitForm checkedItems={checkedItems} disabled={disabled} />
