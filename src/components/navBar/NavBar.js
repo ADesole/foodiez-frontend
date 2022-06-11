@@ -1,8 +1,10 @@
+import { NavLink } from "react-router-dom";
 const NavBar = () => {
   return (
     <div className="main-nav">
-      {/* <button className="all-or-mine">all</button>
-      <button className="all-or-mine">my recipes</button> */}
+     <NavLink to="/">
+        <button className="all-or-mine">Home</button>
+      </NavLink>
     </div>
   );
 };

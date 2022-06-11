@@ -7,6 +7,7 @@ import RecipeList from "./components/recipes/RecipeList";
 import AddIngredientForm from "./components/ingredients/AddIngredientForm";
 import DetailedRecipe from "./components/recipes/DetailedRecipe";
 import IngredientList from "./components/ingredients/IngredientList";
+// import RecipeSubmitForm from "./components/recipes/RecipeSubmitForm";
 //import AddIngredientButton from "./components/recipes/AddIngredientButton";
 import NavBar from "./components/navBar/NavBar";
 import Nav from "./components/navBar/Nav";
@@ -20,7 +21,11 @@ function App() {
         <Route path="/all-recipes" element={<RecipeList />} />
         <Route path="/add-ingredient" element={<AddIngredientForm />} />
         <Route path="/my-recipes" element={<MyRecipes />} />
-        <Route path="/recipe-details/:recipeSlug" element={<DetailedRecipe />} />
+        <Route
+          path="/recipe-details/:recipeSlug"
+          element={<DetailedRecipe />}
+        />
+        <Route path="/create-recipe" element={<IngredientList />} />
         {/* <Route
           path={"/category/:categorySlug"}
           element={<MemberDetails />}
@@ -28,9 +33,6 @@ function App() {
         {/* <Route path={"/book-detail/:bookSlug"} element={<BookDetails />} /> */}
         {/* <Route path={"/book-detail/:bookSlug"} element={<BookDetails />} /> */}
       </Routes>
-      <IngredientList />
-
-
     </div>
   );
 }

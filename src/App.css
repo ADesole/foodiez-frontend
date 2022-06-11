@@ -4,6 +4,14 @@
   --box-shadow: 4px 4px 4px rgba(77, 77, 77, 0.25);
 }
 
+.ingredient-list{
+  display: grid;
+  align-items: center;
+  justify-content: space-around;
+  grid-template-columns: auto auto auto auto auto auto;
+  row-gap: 5px;
+  column-gap: 10px;
+}
 .App {
   text-align: center;
 }

@@ -7,9 +7,24 @@ class AuthStore {
     makeAutoObservable(this);
   }
   user = null;
+
+  // checkForToken = () => {
+  //   const token = localStorage.getItem('myToken');
+  //   if (token) {
+  //     const currentTime = Date.now();
+  //     const user = jwt_decode(token);
+  //     if (user.exp >= currentTime) {
+  //       this.setUser(token);
+  //     } else {
+  //       this.signout();
+  //     }
+  //   }
+  // };
+
   signup = async (userData) => {
     try {
       const response = await instance.post("/signup", userData);
+      // localStorage.setItem("myToken", response.data.token);
       this.user = jwt_decode(response.data.token);
       console.log("userrr " + Object.entries(this.user));
       instance.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
@@ -24,6 +39,7 @@ class AuthStore {
   signin = async (userData) => {
     try {
       const res = await instance.post("/signin", userData);
+      // localStorage.setItem("myToken", res.data.token);
       this.user = jwt_decode(res.data.token);
       instance.defaults.headers.common.Authorization = `Bearer ${res.data.token}`;
       console.log("signed in");
@@ -34,10 +50,12 @@ class AuthStore {
   };
   signout = () => {
     delete instance.defaults.headers.common.Authorization;
+    // localStorage.removeItem('myToken');
     this.user = null;
   };
 }
 
 const authstore = new AuthStore();
+// authstore.checkForToken();
 
 export default authstore;
