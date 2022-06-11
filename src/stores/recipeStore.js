@@ -35,6 +35,26 @@ class RecipeStore {
     // console.log("filtered list after     " + this.filteredReceipes);
   };
 
+  recipesWIngredient = (checkedItems) => {
+    // Array containing all the ingredients ID's only since the array of object gave me trouble in comparing
+    const ingerdientIdList = this.Recipes.map(recipe => recipe.ingredients.map(ingredient => ingredient._id))
+    this.filteredReceipes = this.Recipes.filter(
+      (recipe,index) => checkedItems.every(ingredient => {
+        return ingerdientIdList[index].includes(ingredient);
+      })
+    );
+  };
+
+  recipesWoIngredient = (checkedItems) => {
+    // Array containing all the ingredients ID's only since the array of object gave me trouble in comparing
+    const ingerdientIdList = this.Recipes.map(recipe => recipe.ingredients.map(ingredient => ingredient._id))
+    this.filteredReceipes = this.Recipes.filter(
+      (recipe,index) => checkedItems.every(ingredient => {
+        return !ingerdientIdList[index].includes(ingredient);
+      })
+    );
+  };
+
   createRecipe = async (Recipe) => {
     Recipe.name = Recipe.name.charAt(0).toUpperCase() + Recipe.name.slice(1);
     const response = await instance.post("/recipes/recipes", Recipe);

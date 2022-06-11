@@ -99,6 +99,16 @@ justify-content: flex-start;
   gap: 4px;
 }
 
+.ingredient-list-filter{
+  padding-top: 7px;
+  width: 252px;
+  background-color: #e6e6e6;
+  min-height: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .categories-header{
   display: flex;
   flex-direction: row;
