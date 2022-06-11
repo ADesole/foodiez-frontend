@@ -37,7 +37,9 @@ const Nav = () => {
       ) : (
         <div>
           <div className="pageHeader">
+          <NavLink to="/">
             <img className="logo" src="./pics/logo.png" />
+            </NavLink>
             <div>
               <SignupModal />
               <SigninModal />

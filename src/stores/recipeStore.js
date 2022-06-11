@@ -31,13 +31,14 @@ class RecipeStore {
     // this.Recipes.forEach((recipe) =>
     // console.log("saved " + recipe.category + " given " + filterCategory)
     // );
-    console.log("soup check " + this.Recipes[2].category);
-    console.log("filtered list after     " + this.filteredReceipes);
+    // console.log("soup check " + this.Recipes[2].category);
+    // console.log("filtered list after     " + this.filteredReceipes);
   };
 
   createRecipe = async (Recipe) => {
     const response = await instance.post("/recipes/recipes", Recipe);
-    console.log(response.data)
+    this.Recipes.push(Recipe);
+    console.log(response.data);
   };
 }
 const recipeStore = new RecipeStore();
