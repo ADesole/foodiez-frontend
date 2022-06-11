@@ -6,27 +6,24 @@ import AddIngredientForm from "./AddIngredientForm";
 import RecipeSubmitForm from "../recipes/RecipeSubmitForm";
 import { useState } from "react";
 
-function IngredientList() {
-  const [disabled, setDisabled] = useState(false);
+let checkedItems = [];
 
-  let checkedItems = [];
+function IngredientList() {
+  const [disabled, setDisabled] = useState(true);
+
 
   const checkListAdd = (checkItem) => {
     checkedItems.push(checkItem._id);
-    console.log(checkedItems);
-    // If I uncomment the code below the disable works but for some reason the second push overrides the first one after that everything works perfect I don't know why
-    // if(checkedItems.length >= 1)
-    //   setDisabled(false)
+    if(checkedItems.length >= 1)
+      setDisabled(false)
   };
   const checkListRemove = (checkItem) => {
     let foundIndex = checkedItems.findIndex(
       (object) => object._id === checkItem
     );
     checkedItems.splice(foundIndex, 1);
-    console.log(checkedItems);
-    // Same as above
-    // if(checkedItems.length < 1)
-    //   setDisabled(true)
+    if(checkedItems.length < 1)
+      setDisabled(true)
   };
   //
   let ingredientList = ingredientsStore.ingredients.map((ingredient) => (

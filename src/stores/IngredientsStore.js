@@ -36,7 +36,8 @@ class IngredientsStore {
         alert(`${newIngredient.name} was added!`);
       });
     } catch (error) {
-      console.error(error);
+      alert(`${newIngredient.name} Sorry it's already there`);
+
     }
   };
 }
