@@ -34,23 +34,27 @@ const RecipeSubmitForm = ({ checkedItems, disabled }) => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Enter recipe name:
+       Recipe Name:
         <input type="text" name="name" onChange={handleChange} />
       </label>
       <label>
-        Please enter image url:
+        Image Url:
         <input type="text" name="image" onChange={handleChange} />
       </label>
       <label>
-        Please Enter recipe steps:
+        Time to Prepare:
+        <input type="number" name="ttp" onChange={handleChange} />
+      </label>
+      <label>
+        Steps:
         <textarea name="steps" onChange={handleChange} />
       </label>
       <br />
       <label>
-        Please choose category:
+        Category:
         <CategoriesList handleChange={handleChange} />
       </label>
-      
+        
         <input type="submit" onClick={handleIngredients} disabled={disabled} />
       
     </form>
