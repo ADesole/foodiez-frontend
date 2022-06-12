@@ -7,6 +7,7 @@ import RecipeList from "./components/recipes/RecipeList";
 import AddIngredientForm from "./components/ingredients/AddIngredientForm";
 import DetailedRecipe from "./components/recipes/DetailedRecipe";
 import IngredientList from "./components/ingredients/IngredientList";
+import Homepage from "./components/Homepage";
 // import RecipeSubmitForm from "./components/recipes/RecipeSubmitForm";
 //import AddIngredientButton from "./components/recipes/AddIngredientButton";
 import NavBar from "./components/navBar/NavBar";
@@ -17,7 +18,8 @@ function App() {
     <div>
       <Nav />
       <Routes>
-        <Route path="/" element={<RecipeList />} />
+        <Route path="/" element={<Homepage />} />
+        <Route path="/recipes" element={<RecipeList />} />
         <Route path="/all-recipes" element={<RecipeList />} />
         <Route path="/add-ingredient" element={<AddIngredientForm />} />
         <Route path="/my-recipes" element={<MyRecipes />} />

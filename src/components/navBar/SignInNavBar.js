@@ -3,8 +3,11 @@ import { NavLink } from "react-router-dom";
 const SignInNavBar = () => {
   return (
     <div className="main-nav">
+      <NavLink to="/">
+        <button className="all-or-mine">Home</button>
+      </NavLink>
       <NavLink to="/all-recipes">
-        <button className="all-or-mine">All</button>
+        <button className="all-or-mine">All recipes</button>
       </NavLink>
 
       <NavLink to="/my-recipes">
