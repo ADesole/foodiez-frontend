@@ -7,6 +7,7 @@ import authstore from "../../stores/AuthStore";
 const RecipeSubmitForm = ({ checkedItems, disabled }) => {
   const [input, setInput] = useState({
     user: authstore.user._id,
+    category: "Breakfast",
   });
 
   const handleChange = (event) => {
