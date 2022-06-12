@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import recipeStore from "../stores/recipeStore";
+import { observer } from "mobx-react";
 
 import RecipeItem from "./recipes/homepageRecipeItem";
 
@@ -18,7 +19,12 @@ const HomePage = () => {
       }}
     >
       <h1
-        style={{ color: "#04AA6D", fontWeight: "bold", marginBottom: "30px" }}
+        style={{
+          color: "black",
+          fontWeight: "bold",
+          marginBottom: "30px",
+          fontFamily: "'Exo', sans-serif",
+        }}
       >
         Try our most recent recipes
       </h1>
@@ -46,4 +52,4 @@ const HomePage = () => {
     </div>
   );
 };
-export default HomePage;
+export default observer(HomePage);
