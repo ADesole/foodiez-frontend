@@ -26,7 +26,7 @@ class IngredientsStore {
     try {
       newIngredient.name =
         newIngredient.name.charAt(0).toUpperCase() +
-        newIngredient.name.slice(1);
+        newIngredient.name.slice(1).toLowerCase();
       const response = await axios.post(
         "http://localhost:8000/ingredients/createIngredient",
         newIngredient
