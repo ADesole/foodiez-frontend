@@ -1,4 +1,3 @@
-import React from "react";
 import authstore from "../../stores/AuthStore";
 
 function SignoutButton() {

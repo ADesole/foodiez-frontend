@@ -19,17 +19,7 @@ function App() {
             <div className="pageHeader">
               <img className="logo" src="./pics/logo.png" />
               <div className="profile">
-                <h3
-                  style={{
-                    color: "black",
-                    position: "relative",
-                    // top: "20px",
-                    // left: "10px",
-                    fontSize: "20px",
-                  }}
-                >
-                  Hello {authStore.user.username}{" "}
-                </h3>
+                <h3 className="hello-user">Hello {authStore.user.username} </h3>
                 <SignoutButton />
               </div>
             </div>
@@ -52,7 +42,6 @@ function App() {
       {/* <NavBar /> */}
       <CategoriesList />
       <RecipeList />
-
     </>
   );
 }

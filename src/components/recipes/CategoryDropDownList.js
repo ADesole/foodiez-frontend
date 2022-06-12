@@ -1,8 +1,5 @@
-
 import { observer } from "mobx-react";
 import categoriesStore from "../../stores/CategoriesStore";
-import recipeStore from "../../stores/recipeStore";
-import authstore from "../../stores/AuthStore";
 
 const CategoriesList = ({ handleChange }) => {
   const displayCategories = categoriesStore.categories.map((category) => (
@@ -11,7 +8,7 @@ const CategoriesList = ({ handleChange }) => {
 
   return (
     <select name="category" onChange={handleChange}>
-    {displayCategories}
+      {displayCategories}
     </select>
   );
 };

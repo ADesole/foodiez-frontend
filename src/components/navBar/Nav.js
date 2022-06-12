@@ -6,6 +6,7 @@ import SignInNavBar from "./SignInNavBar";
 import SignupModal from "../user/SignupModal";
 import SigninModal from "../user/SigninModal";
 import NavBar from "./NavBar";
+
 const Nav = () => {
   return (
     <div>
@@ -13,20 +14,14 @@ const Nav = () => {
         <div>
           <div className="pageHeader">
             <NavLink to="/">
-              <img className="logo" src="./pics/logo.png" />
+              <img
+                className="logo"
+                alt="foodiez"
+                src="./pics/colored-logo.png"
+              />
             </NavLink>
             <div className="profile">
-              <h3
-                style={{
-                  color: "black",
-                  position: "relative",
-                  // top: "20px",
-                  // left: "10px",
-                  fontSize: "20px",
-                }}
-              >
-                Hello {authStore.user.username}{" "}
-              </h3>
+              <h3 className="hello-user">Hello {authStore.user.username} </h3>
               <NavLink to="/">
                 <SignoutButton />
               </NavLink>
@@ -37,8 +32,12 @@ const Nav = () => {
       ) : (
         <div>
           <div className="pageHeader">
-          <NavLink to="/">
-            <img className="logo" src="./pics/logo.png" />
+            <NavLink to="/">
+              <img
+                className="logo"
+                alt="foodiez"
+                src="./pics/colored-logo.png"
+              />
             </NavLink>
             <div>
               <SignupModal />
