@@ -17,9 +17,7 @@ function RecipeList() {
   return (
     <div style={{ display: "flex" }}>
       <Home />
-      <div
-        style={{ display: "flex", flexDirection: "column", minWidth: "1000px" }}
-      >
+      <div style={{ display: "flex", flexDirection: "column" }}>
         <div
           style={{
             position: "relative",
