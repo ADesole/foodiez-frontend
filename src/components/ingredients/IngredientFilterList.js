@@ -9,9 +9,10 @@ let checkedItems = [];
 
 function IngredientFilterList() {
   const [selected, setSelected] = useState([]);
-  let ingredientListDrop = ingredientsStore.ingredients.map((ingredient) => (
-    { label: ingredient.name, value: ingredient._id }
-  ));
+  let ingredientListDrop = ingredientsStore.ingredients.map((ingredient) => ({
+    label: ingredient.name,
+    value: ingredient._id,
+  }));
 
   // const checkListAdd = (checkItem) => {
   //   checkedItems.push(checkItem._id);
@@ -22,15 +23,14 @@ function IngredientFilterList() {
   //   checkedItems.splice(foundIndex, 1);
   // };
 
-
   const handleSubmitFilterWith = () => {
-    checkedItems = selected.map(ingredient => ingredient.value)
+    checkedItems = selected.map((ingredient) => ingredient.value);
     console.log(checkedItems);
     recipeStore.recipesWIngredient(checkedItems);
   };
 
   const handleSubmitFilterWithout = () => {
-    checkedItems = selected.map(ingredient => ingredient.value)
+    checkedItems = selected.map((ingredient) => ingredient.value);
     console.log(checkedItems);
     recipeStore.recipesWoIngredient(checkedItems);
   };
@@ -43,7 +43,6 @@ function IngredientFilterList() {
   //   />
   // ));
 
-  
   return (
     <>
       {/* Make the ingredient-list-filter scrollable */}
@@ -55,11 +54,12 @@ function IngredientFilterList() {
         </div>
         {/* <div className="ingredient-list-filter">{ingredientList}</div> */}
         <pre>{JSON.stringify(selected.name)}</pre>
-      <MultiSelect
-        options={ingredientListDrop}
-        value={selected}
-        onChange={setSelected}
-        labelledBy="Select"
+        <MultiSelect
+          className="filter-ingredients"
+          options={ingredientListDrop}
+          value={selected}
+          onChange={setSelected}
+          labelledBy="Select"
         />
         <div className="Button-container">
           <button
