@@ -1,5 +1,7 @@
 import recipeStore from "../../stores/recipeStore";
 import { useParams } from "react-router-dom";
+import { observer } from "mobx-react";
+
 function DetailedRecipe() {
   const { recipeSlug } = useParams();
   const recipe = recipeStore.Recipes.find(
@@ -18,7 +20,11 @@ function DetailedRecipe() {
   return (
     <>
       <section className="recipe-details-card">
-        <img className="recipe-details-image" src={recipe.image} />
+        <img
+          className="recipe-details-image"
+          alt={recipe.name}
+          src={recipe.image}
+        />
 
         <p className="recipe-details-title">{recipe.name}</p>
         <div className="recipe-details-content">
@@ -49,4 +55,4 @@ function DetailedRecipe() {
   );
 }
 
-export default DetailedRecipe;
+export default observer(DetailedRecipe);

@@ -1,7 +1,6 @@
 import RecipeItem from "./RecipeItem";
 import RecipesStore from "../../stores/recipeStore";
 import { observer } from "mobx-react";
-import AuthStore from "../../stores/AuthStore";
 import Home from "../Home";
 import IngredientFilterList from "../ingredients/IngredientFilterList";
 

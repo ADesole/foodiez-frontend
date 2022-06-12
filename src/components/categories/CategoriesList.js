@@ -17,7 +17,7 @@ const CategoriesList = () => {
         {authstore.user ? <AddCategoryButton /> : <></>}
       </div>
       <button onClick={recipeStore.allRecipes} className="category-item">
-        all
+        All
       </button>
       <div>{displayCategories}</div>
     </div>

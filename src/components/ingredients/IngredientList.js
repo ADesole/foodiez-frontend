@@ -1,6 +1,5 @@
 import IngredientItem from "./IngredientItem";
 import { observer } from "mobx-react";
-// import ingredients from "../../ingredientData"
 import ingredientsStore from "../../stores/IngredientsStore";
 import AddIngredientForm from "./AddIngredientForm";
 import RecipeSubmitForm from "../recipes/RecipeSubmitForm";

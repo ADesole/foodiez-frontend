@@ -1,5 +1,6 @@
 import instance from "./instance";
-import { makeAutoObservable, runInAction } from "mobx";
+import { makeAutoObservable } from "mobx";
+
 class RecipeStore {
   constructor() {
     makeAutoObservable(this);
@@ -37,9 +38,11 @@ class RecipeStore {
 
   recipesWIngredient = (checkedItems) => {
     // Array containing all the ingredients ID's only since the array of object gave me trouble in comparing
-    const ingerdientIdList = this.Recipes.map(recipe => recipe.ingredients.map(ingredient => ingredient._id))
-    this.filteredReceipes = this.Recipes.filter(
-      (recipe,index) => checkedItems.every(ingredient => {
+    const ingerdientIdList = this.Recipes.map((recipe) =>
+      recipe.ingredients.map((ingredient) => ingredient._id)
+    );
+    this.filteredReceipes = this.Recipes.filter((recipe, index) =>
+      checkedItems.every((ingredient) => {
         return ingerdientIdList[index].includes(ingredient);
       })
     );
@@ -47,9 +50,11 @@ class RecipeStore {
 
   recipesWoIngredient = (checkedItems) => {
     // Array containing all the ingredients ID's only since the array of object gave me trouble in comparing
-    const ingerdientIdList = this.Recipes.map(recipe => recipe.ingredients.map(ingredient => ingredient._id))
-    this.filteredReceipes = this.Recipes.filter(
-      (recipe,index) => checkedItems.every(ingredient => {
+    const ingerdientIdList = this.Recipes.map((recipe) =>
+      recipe.ingredients.map((ingredient) => ingredient._id)
+    );
+    this.filteredReceipes = this.Recipes.filter((recipe, index) =>
+      checkedItems.every((ingredient) => {
         return !ingerdientIdList[index].includes(ingredient);
       })
     );
@@ -58,7 +63,7 @@ class RecipeStore {
   createRecipe = async (Recipe) => {
     Recipe.name = Recipe.name.charAt(0).toUpperCase() + Recipe.name.slice(1);
     const response = await instance.post("/recipes/recipes", Recipe);
-    this.Recipes.push(Recipe);
+    this.Recipes.push(response.data);
     console.log(response.data);
   };
 }
