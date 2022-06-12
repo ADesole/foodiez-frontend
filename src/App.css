@@ -295,6 +295,7 @@ label {
   font-weight: bold;
 }
 
+
 .submit-form{
   font-weight: bold;
   background-color: #04AA6D;
@@ -401,7 +402,6 @@ border-radius: 10px;
 }
 
 .Button-container{
-  margin-top: 5px;
   display: flex;
   gap: 10px;
   flex-direction: row;
@@ -454,4 +454,7 @@ border-radius: 5px;
   padding-top: 2px;
     padding-bottom: 25px;
 
+.filter-ingredients{
+  min-width: 30%;
+  max-width: 30%;
 }

@@ -60,7 +60,7 @@ const RecipeSubmitForm = ({ checkedItems, disabled }) => {
       <label className="create-recipe-label">
         <p className="form-sub-title">Steps:</p>
         <textarea
-          placeholder="Step1 - Step2 - ..."
+          placeholder="Step1. Step2. ..."
           name="steps"
           className="text-ingredient"
           onChange={handleChange}
