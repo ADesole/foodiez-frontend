@@ -420,4 +420,5 @@ border-radius: 5px;
 
 .filter-ingredients{
   min-width: 30%;
+  max-width: 30%;
 }
