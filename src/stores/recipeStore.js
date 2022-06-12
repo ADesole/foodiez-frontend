@@ -8,6 +8,7 @@ class RecipeStore {
   }
   Recipes = [];
   filteredReceipes = [];
+  currentCategory = "all";
 
   fetchRecipes = async () => {
     try {
@@ -22,6 +23,8 @@ class RecipeStore {
   };
   allRecipes = () => {
     this.filteredReceipes = this.Recipes;
+    this.currentCategory = "all";
+
   };
   //call the function using onclick
   filterRecipes = (filterCategory) => {
@@ -29,6 +32,8 @@ class RecipeStore {
     this.filteredReceipes = this.Recipes.filter(
       (recipe) => recipe.category === filterCategory
     );
+    this.currentCategory = filterCategory;
+    
     // this.Recipes.forEach((recipe) =>
     // console.log("saved " + recipe.category + " given " + filterCategory)
     // );
@@ -38,26 +43,73 @@ class RecipeStore {
 
   recipesWIngredient = (checkedItems) => {
     // Array containing all the ingredients ID's only since the array of object gave me trouble in comparing
-    const ingerdientIdList = this.Recipes.map((recipe) =>
+    if(this.currentCategory!== "all"){
+  const ingerdientIdList = this.Recipes.filter(recipe => recipe.category === this.currentCategory).map((recipe) =>
       recipe.ingredients.map((ingredient) => ingredient._id)
     );
-    this.filteredReceipes = this.Recipes.filter((recipe, index) =>
+    this.filteredReceipes = this.Recipes.filter(recipe => recipe.category === this.currentCategory).filter((recipe, index) =>
       checkedItems.every((ingredient) => {
         return ingerdientIdList[index].includes(ingredient);
       })
     );
+  }
+  else {
+    const ingerdientIdList = this.Recipes.map((recipe) =>
+    recipe.ingredients.map((ingredient) => ingredient._id)
+  );
+  this.filteredReceipes = this.Recipes.filter((recipe, index) =>
+    checkedItems.every((ingredient) => {
+      return ingerdientIdList[index].includes(ingredient);
+    })
+  );
+  }
+
+
+
+
+    // const ingerdientIdList = this.filteredReceipes.map((recipe) =>
+    //   recipe.ingredients.map((ingredient) => ingredient._id)
+    // );
+    // this.filteredReceipes = this.filteredReceipes.filter((recipe, index) =>
+    //   checkedItems.every((ingredient) => {
+    //     return ingerdientIdList[index].includes(ingredient);
+    //   })
+    // );
   };
 
   recipesWoIngredient = (checkedItems) => {
     // Array containing all the ingredients ID's only since the array of object gave me trouble in comparing
-    const ingerdientIdList = this.Recipes.map((recipe) =>
-      recipe.ingredients.map((ingredient) => ingredient._id)
-    );
-    this.filteredReceipes = this.Recipes.filter((recipe, index) =>
-      checkedItems.every((ingredient) => {
-        return !ingerdientIdList[index].includes(ingredient);
-      })
-    );
+
+    if(this.currentCategory!== "all"){
+      const ingerdientIdList = this.Recipes.filter(recipe => recipe.category === this.currentCategory).map((recipe) =>
+          recipe.ingredients.map((ingredient) => ingredient._id)
+        );
+        this.filteredReceipes = this.Recipes.filter(recipe => recipe.category === this.currentCategory).filter((recipe, index) =>
+          checkedItems.every((ingredient) => {
+            return !ingerdientIdList[index].includes(ingredient);
+          })
+        );
+      }
+      else {
+        const ingerdientIdList = this.Recipes.map((recipe) =>
+        recipe.ingredients.map((ingredient) => ingredient._id)
+      );
+      this.filteredReceipes = this.Recipes.filter((recipe, index) =>
+        checkedItems.every((ingredient) => {
+          return !ingerdientIdList[index].includes(ingredient);
+        })
+      );
+      }
+
+
+    // const ingerdientIdList = this.filteredReceipes.map((recipe) =>
+    //   recipe.ingredients.map((ingredient) => ingredient._id)
+    // );
+    // this.filteredReceipes = this.filteredReceipes.filter((recipe, index) =>
+    //   checkedItems.every((ingredient) => {
+    //     return !ingerdientIdList[index].includes(ingredient);
+    //   })
+    // );
   };
 
   createRecipe = async (Recipe) => {
