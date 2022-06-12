@@ -35,6 +35,7 @@ const RecipeSubmitForm = ({ checkedItems, disabled }) => {
           type="text"
           name="name"
           onChange={handleChange}
+          required 
         />
       </label>
       <label className="create-recipe-label">
@@ -45,6 +46,7 @@ const RecipeSubmitForm = ({ checkedItems, disabled }) => {
           type="text"
           name="image"
           onChange={handleChange}
+          required 
         />
       </label>
       <label className="create-recipe-label">
@@ -55,6 +57,7 @@ const RecipeSubmitForm = ({ checkedItems, disabled }) => {
           type="number"
           name="ttp"
           onChange={handleChange}
+          required 
         />
       </label>
       <label className="create-recipe-label">
@@ -64,6 +67,7 @@ const RecipeSubmitForm = ({ checkedItems, disabled }) => {
           name="steps"
           className="text-ingredient"
           onChange={handleChange}
+          required 
         />
       </label>
       <label className="create-recipe-label">
