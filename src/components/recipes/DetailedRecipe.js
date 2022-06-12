@@ -13,7 +13,7 @@ function DetailedRecipe() {
   );
   console.log("ingredients console " + recipeIngredients);
   // console.log("ingredients console " + Object.values(recipeIngredients));
-  const allSteps = recipe.steps.split(".");
+  const allSteps = recipe.steps.split(". ");
 
   const organizedSteps = allSteps.map((step) => <p>{`• ${step}`}</p>);
 
